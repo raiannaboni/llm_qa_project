@@ -1,0 +1,9 @@
+fastapi==0.95.0
+uvicorn==0.23.0
+pydantic==1.10.2
+requests==2.28.1
+beautifulsoup4==4.11.1
+chromadb==0.2.5
+sentence-transformers==2.2.2
+deepseek==0.1.0
+streamlit==1.12.2
