@@ -59,10 +59,7 @@ hotmart_text = extract_text_from_url(url)
 
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") 
 
-
 hotmart_text_splitted = semantic_split(hotmart_text, embeddings)
-
-
 
 # 🔹 Convertendo cada string em um objeto Document
 documents = [Document(page_content=chunk) for chunk in hotmart_text_splitted]
