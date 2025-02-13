@@ -28,17 +28,14 @@ def split_text(text, chunk_size=1000, chunk_overlap=20):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     text_chunks = text_splitter.split_text(text)
 
-    # print('coisaaaaa111', text_chunks)
-    # all_splits = text_splitter.split_documents(text_splitter)
-    # return all_splits
     return text_chunks
 
 # Separar textos pela semântica
 def semantic_split(text, embeddings, threshold=0.7):
     '''Divide o texto semânticamente em chunks baseados na similaridade entre frases'''
     sentences = text.split('. ')
-    sentence_embeddings = embeddings.embed_documents(sentences)  # ✅ Correção aqui
-    # sentence_embeddings = embeddings.encode(sentences)
+    sentence_embeddings = embeddings.embed_documents(sentences)  
+    
     chunks = []
     current_chunk = []
     
@@ -59,15 +56,12 @@ def semantic_split(text, embeddings, threshold=0.7):
 
 url = 'https://hotmart.com/pt-br/blog/como-funciona-hotmart'
 hotmart_text = extract_text_from_url(url)
-# Texto coletado com sucesso
-# print('coisaaaa', hotmart_text)
-# embeddings = SentenceTransformerEmbeddings(model_name='all-MiniLM-L6-v2')
-# embeddings = SentenceTransformer('all-MiniLM-L6-v2')
+
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") 
 
-# hotmart_text_splitted = split_text(hotmart_text)
+
 hotmart_text_splitted = semantic_split(hotmart_text, embeddings)
-# print('vvvvvvvvvvv', hotmart_text_splitted)
+
 
 
 # 🔹 Convertendo cada string em um objeto Document
@@ -80,4 +74,4 @@ db = Chroma.from_documents(documents, embeddings)
 query = "o que é a hotmart?"
 matching_docs = db.similarity_search(query,k=3)
 
-# print('aaaaaaaaaaaaaaaaaaaaaa', matching_docs)
+
