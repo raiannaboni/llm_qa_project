@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8501
 
 # Comando para rodar a aplicação
-CMD ["streamlit", "run", "main.py"]
+CMD ["streamlit", "run", "./src/main.py"]

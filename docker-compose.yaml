@@ -8,4 +8,4 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: ["streamlit", "run", "main.py", "--server.address=0.0.0.0"]
+    command: ["streamlit", "run", "./src/main.py", "--server.address=0.0.0.0"]

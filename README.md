@@ -21,6 +21,7 @@ docker compose up --build
 ### 3️⃣ Acessar a aplicação
 Abra o navegador e acesse:
 👉 **http://localhost:8501**
+
 ## 📌 Funcionamento
 1. O código carrega o conteúdo do site da Hotmart.
 2. O texto é dividido em trechos menores para facilitar a recuperação.
