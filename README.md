@@ -25,11 +25,10 @@ docker build -t hotmart_project .
 
 ### 4️⃣ Executar o container
 ```sh
-docker run -p 8501:8501 --env-file .env hotmart-qa
+docker run -p 8501:8501 --env-file .env hotmart_project
 ```
 
 ### 5️⃣ Acessar a aplicação
-rodar o código: streamlit run main.py
 Abra o navegador e acesse:
 👉 **http://localhost:8501**
 
@@ -40,6 +39,5 @@ Abra o navegador e acesse:
 4. Quando uma pergunta é feita, o sistema recupera os trechos mais relevantes.
 5. A LLM (Meta-Llama 3-8B-Instruct) gera uma resposta baseada nos dados recuperados.
 
-## 📄 Licença
-Este projeto está sob a licença MIT. Sinta-se livre para usar e contribuir! 🚀
+
 
