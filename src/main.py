@@ -36,6 +36,7 @@ chain_rag = ({'contexto': retriever | format_docs, 'pergunta': RunnablePassthrou
              | llm
              | StrOutputParser())
 
-# print(answer = chain_rag.invoke('o que e a hotmart?')  )
+# Teste chamada da LLM a partir do vectorDB
+# print(answer = chain_rag.invoke('o que e a hotmart?'))
 
 streamlit_interface(chain_rag)
