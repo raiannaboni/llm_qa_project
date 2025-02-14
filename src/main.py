@@ -36,4 +36,6 @@ chain_rag = ({'contexto': retriever | format_docs, 'pergunta': RunnablePassthrou
              | llm
              | StrOutputParser())
 
+# print(answer = chain_rag.invoke('o que e a hotmart?')  )
+
 streamlit_interface(chain_rag)
