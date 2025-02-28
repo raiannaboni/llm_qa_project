@@ -8,7 +8,7 @@ from utils.prompt import prompt_rag
 from interface.st_interface import streamlit_interface
 warnings.filterwarnings('ignore')
 
-HF_API_TOKEN = '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'
+HF_API_TOKEN = ''
 
 hotmart_data = get_hotmart_data()
 splitted_texts = text_splitter(hotmart_data)
