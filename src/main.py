@@ -2,13 +2,15 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_community.llms import HuggingFaceHub
 import warnings
+import os
 
 from repository.vectorDB import create_vector_store, get_hotmart_data, text_splitter
 from utils.prompt import prompt_rag
 from interface.st_interface import streamlit_interface
+from dotenv import load_dotenv
 warnings.filterwarnings('ignore')
 
-HF_API_TOKEN = ''
+HF_API_TOKEN = os.getenv('HF_API_TOKEN')
 
 hotmart_data = get_hotmart_data()
 splitted_texts = text_splitter(hotmart_data)
